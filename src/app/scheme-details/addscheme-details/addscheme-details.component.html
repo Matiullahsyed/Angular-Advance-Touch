@@ -1,0 +1,48 @@
+<div class="container">
+    <main role="main" class="pb-3">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-12" >
+                    <mat-icon id="close-icon"  (click)="closeDialog()">close</mat-icon>
+                    <h3 class="login-heading mb-4">Add Scheme</h3>
+                    <form [formGroup]="formdata" (ngSubmit)="addSchemeDetails(formdata.value)" novalidate="" class="ng-pristine ng-invalid ng-touched" enctype="multipart/form-data" >
+                        <div class="form-label-group">
+                            <label for="title">Gates Scheme Id</label>
+                            <input class="form-control ng-untouched ng-pristine ng-invalid" name="gatesSchemeId" placeholder="Gates Scheme Id" required="" type="text" formControlName = "gatesSchemeId">
+                            
+                        </div>
+                        <div class="form-label-group">
+                            <label for="gateTitle">Gate Title</label>
+                            <input class="form-control ng-untouched ng-pristine ng-invalid" name="gateTitle" placeholder="Gate Title" required="" type="text" formControlName = "gateTitle">
+                            
+                        </div>
+                        <div class="form-label-group">
+                            <label for="description">Description</label>
+                            <input class="form-control ng-untouched ng-pristine ng-invalid" name="description" placeholder="Description" required="" type="text" formControlName = "description">
+                            
+                        </div>
+                        <div class="form-label-group">
+                            <label for="userId">Gate ShortName</label>
+                            <input class="form-control ng-untouched ng-pristine ng-invalid" name="gateShortName" placeholder="Gate ShortName" required="" type="text" formControlName = "gateShortName">
+                            
+                        </div>
+                        <div class="form-label-group">
+                            <label for="inputPassword">Range Min</label>
+                            <input class="form-control ng-untouched ng-pristine ng-invalid" name="rangeMin" placeholder="rangeMin" required="" type="text" formControlName = "rangeMin">
+                        </div>
+                        <div class="form-label-group">
+                            <label for="inputPassword">Range Max</label>
+                            <input class="form-control ng-untouched ng-pristine ng-invalid" name="rangeMax" placeholder="Range Max" required="" type="text" formControlName = "rangeMax">
+                        </div>
+                        <div class="form-label-group">
+                            <label for="inputPassword">Gate Color</label>
+                            <input class="form-control ng-untouched ng-pristine ng-invalid" name="gateColor" placeholder="Gate Color" required="" type="text" formControlName = "gateColor">
+                        </div>
+                        <button class="forsubmit btn btn-primary mb-2" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+

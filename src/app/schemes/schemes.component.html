@@ -1,0 +1,23 @@
+<button mdbBtn (click)="openPopupForAddScheme()" type="button" class="forsubmit btn btn-primary mb-2">Add</button>
+<div class="container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns;">
+            <th class="header" mat-header-cell *matHeaderCellDef>{{column}} </th>
+            <td mat-cell *matCellDef="let element;let i=index">
+                <span *ngIf="column !== 'action'">{{element[column]}}</span>
+                <span *ngIf="column == 'action'">
+                    <button (click)="openDialogfindGatesDetail(element.gatesSchemeId)" type="button"
+                        class="forsubmit btn btn-primary mb-2">Details</button>
+                    <button (click)="openUpdateDialog(i)" type="button"
+                        class="forsubmit btn btn-secondary mb-2">Update</button>
+                    <button (click)="openDeleteDialog(i)" type="button"
+                        class="forsubmit btn btn-danger mb-2">Delete</button>
+                </span>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[2,5, 10, 25, 100]">
+    </mat-paginator>
+</div>
